@@ -8,7 +8,9 @@
   <!-- This would be an awesome place to link to bootstrap...just sayin... -->
 
   <link rel="stylesheet" href="/static/profile.css">
-  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" 
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+          crossorigin="anonymous"></script>
 
 
 </head>
@@ -35,7 +37,7 @@
     </div>
     <div>
       <label>Salary: </label>
-      <select name="salary">
+      <select name="salary" id="salary-field">
         <option value="25-50k">$25,000 - 50,000</option>
         <option value="50-75k">$50,000 - 75,000</option>
         <option value="75-100k">$75,000 - 150,000</option>
@@ -43,7 +45,7 @@
     </div>
     <div>
       <label>Education Level: </label>
-      <select name="education">
+      <select name="education" id="education-field">
         <option value="High school">High School</option>
         <option value="College">College</option>
         <option value="Starfleet Academy">Starfleet Academy</option>
@@ -54,13 +56,13 @@
       <input class="form-control autocomplete" type="text" name="state" id="state-field"
              placeholder="Alaska">
     </div>
-    <div>
+    <div id="city-field">
       <label>City type: </label>
       <input type="checkbox" name="city" value="rural"> Rural
       <input type="checkbox" name="city" value="suburban"> Suburban
       <input type="checkbox" name="city" value="urban"> Urban
     </div>
-    <div>
+    <div id="garden">
       <label>Do you garden? </label>
       <input type="radio" name="garden" value="yes">Yes
       <input type="radio" name="garden" value="no">No
@@ -79,6 +81,8 @@
       <button class="btn btn-primary" type="submit" id="submit-profile">Submit</button>
     </div>
   </form>
+
+  <div id="profile-response"></div>
 </div>
 
 <script src="/static/profile.js"></script>
