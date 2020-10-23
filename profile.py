@@ -12,19 +12,31 @@ def index():
 
 
 
-@app.route('/profile', methods=['POST'])
+@app.route('/api/profile', methods=['POST'])
 def profile():
     """Return results from profile form."""
 
-    fullname = request.form['name']
-    # TODO: get the values from the rest of the form
-    # Add them to jsonify
+    fullname = request.form.get('name')
+    age = request.form.get('age')
+    occupation = request.form.get('occupation')
+    salary = request.form.get('salary')
+    education = request.form.get('education')
+    state = request.form.get('state')
+    city = request.form.get('city')
+    garden = request.form.get('garden')
+    tv = request.form.get('tv')
     
-    return jsonify({'fullname': fullname, })
-
-
+    return jsonify({'fullname': fullname, 
+                    'age': age,
+                    'occupation': occupation,
+                    'salary': salary,
+                    'education': education,
+                    'state': state,
+                    'city': city,
+                    'garden': garden,
+                    'tv': tv})
 
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
